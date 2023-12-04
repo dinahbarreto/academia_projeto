@@ -1,0 +1,138 @@
+
+body{
+    width: 150vh;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(https://1ebd8d7983667121066ac830f0ce6513.cdn.bubble.io/f1695420528419x539410113365922200/atletico-homem-e-mulher-com-halteres.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: cover;
+}
+.logo{
+    position: absolute ;
+    z-index: 1;
+    margin: 12%;
+    margin-top: 1%;
+    background-image: url(img/WhatsApp_Image_2023-09-27_at_08.26.10-removebg-preview.png);
+    padding: 80px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 100%;
+}
+.conteiner{
+
+    width: 100%;
+   padding: 100%;
+   background-color: white;
+   margin: 2px;
+   margin-top: 0;
+   border-radius: 10%;
+   opacity: 80%;
+}
+.elementos #treino{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    opacity: 100%;
+    font-size: 20px;
+    margin-block-end: 20px;
+}
+.A #primeiro{
+    display: flex;
+    align-items: flex-start;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 110%;
+}
+.A #segundo{
+    display: flex;
+    align-items: flex-start;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 110%;
+}
+.A #terceiro{
+    display: flex;
+    align-items: flex-start;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 110%;
+}
+.A #quarto{
+    display: flex;
+    align-items: flex-start;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 110%;
+}
+.A #quinto{
+    display: flex;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 110%;
+}
+
+button{
+    margin-top: 20px;
+    background-color: #FE6C19;
+    height: 40px;
+    width: 190px;
+    border-radius: 5px;
+    border-color: #fe6d1900;
+    color: #ffffff;
+    font-weight: 600;
+    opacity: 100%;
+}
+
+button:hover{
+
+        background-color: white;
+        border-color: orange;
+        color: orange;
+    
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.modal {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.close-btn {
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.whatsapp-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #25d366;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.whatsapp-icon img {
+    width: 70%;
+    height: auto;
+}

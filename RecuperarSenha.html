@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style_login.css">
+    <title>Recuperar senha</title>
+</head>
+<body>
+    <div class="container">
+        <div class="container_recuperarsenha">
+            <br>
+            <center> <div class="logo_app"></div></center>
+            <br>
+            <center> <div class="label_titulo">RECUPERAR SENHA</div></center>
+            <br>
+            <center><div class="label_user">Email:</div></center>
+            <center><input type="email" placeholder="Ex.: guilherme@email.com"></center>
+            <br>
+            <center><div class="container_btn-login">
+                <a class="one" href="Login.html" >Cancelar</a>
+                <button class="btn_laranja">Enviar link de recuperação</button>
+            </div></center>
+            <br><br>
+            </div>
+            <div class="whatsapp-icon" onclick="openWhatsApp()">
+                <img src="icone-whatsapp.png" alt="Ícone do WhatsApp">
+            </div>
+    </div>
+    <script>
+        function openWhatsApp() {
+                window.open('https://api.whatsapp.com/send?phone=5581999477226', '_blank');
+            }
+        </script>
+</body>
+</html>
+</html>

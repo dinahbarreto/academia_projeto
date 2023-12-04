@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TreinoA</title>
+    <link rel="stylesheet" type="text/css"  href="StyleTreino.css">
+    <style></style>
+</head>
+<body>
+<div>
+    <div class="logo"></div> 
+    <div class="conteiner">
+        <h3>Treino de Peito</h3>
+        <div class="A">
+            <div id="primeiro">
+                <input type="checkbox">   
+                <label for="peito">Supino reto</label>
+            </div>
+            <div id="segundo">
+                <input type="checkbox">   
+                <label for="peito">Supino inclinado</label>
+            </div>
+            <div id="terceiro">
+                <input type="checkbox">   
+                <label for="peito">Fly</label>
+            </div>
+            <div id="quarto">
+                <input type="checkbox">   
+                <label for="peito">Tricips Pronado</label>
+            </div>
+            <div id="quinto">
+                <input type="checkbox">   
+                <label for="peito">Desenvolvimento Halter</label>
+            </div>
+            <div class="whatsapp-icon" onclick="openWhatsApp()">
+                <img src="icone-whatsapp.png" alt="Ícone do WhatsApp">
+            </div>
+    </div>
+        <button onclick="exibirAlerta(telaInicio())">Concluir</button>
+        <br><button onclick="telaInicio()">Voltar para treinos</button>
+    </div>
+    
+</div>
+
+</body>
+
+<script>
+function telaInicio(){
+    window.location.href = "treinos.html"
+}
+function exibirAlerta() {
+alert("Treino concluído com sucesso!");
+}
+function openWhatsApp() {
+                window.open('https://api.whatsapp.com/send?phone=5581999477226', '_blank');
+            }
+</script>
+
+</html>

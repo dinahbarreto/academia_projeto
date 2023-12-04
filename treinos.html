@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treinos</title>
+    <link rel="stylesheet" type="text/css"  href="StyleTreino.css">
+    <style></style>
+</head>
+    
+<body>
+    <div>
+        <div class="logo"></div> 
+            <div class="conteiner">
+                <h2>Escolha seu treino</h2>
+                <div>     
+                    <button onclick="treinoA()">Peito</button>
+                    <br>
+                    <button onclick="treinoB()">Costas</button>
+                    <br>
+                    <button onclick="treinoC()">Pernas</button>
+                    <br>
+                    <button onclick="voltarParaFuncoes()">Voltar</button>
+                </div> 
+                <div class="whatsapp-icon" onclick="openWhatsApp()">
+                    <img src="icone-whatsapp.png" alt="Ícone do WhatsApp">
+                </div>
+            </div>   
+        </div>   
+    </div>
+</body>
+<script>
+    function treinoA(){
+        window.location.href = "treinoA.html"
+    }
+    function treinoB(){
+        window.location.href = "treinoB.html"
+    }
+    function treinoC(){
+        window.location.href = "treinoC.html"
+    }
+    function voltarParaFuncoes() {
+            window.location.href = 'funcoes.html';
+        }
+        function openWhatsApp() {
+                window.open('https://api.whatsapp.com/send?phone=5581999477226', '_blank');
+            }
+</script>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style_login.css">
+    <title>Cadastro</title>
+</head>
+<body>
+    <div class="container">
+        <div class="container_register">
+            <br>
+            <center> <div class="logo_app"></div></center>
+            <br>
+            <center> <div class="label_titulo">CADASTRO DE USUÁRIO</div></center>
+            <br>
+            <center><div class="label_user">Nome:</div></center>
+            <center><input id="nomeInput" type="text" placeholder="Ex.: Guilherme Manoel"></center>
+            <br>
+            <center><div class="label_user">Telefone:</div></center>
+            <center><input id="telefoneInput" type="tel" placeholder="Ex.: 81988776655"></center>
+            <br>
+            <center><div class="label_user">Email:</div></center>
+            <center><input id="emailInput" type="email" placeholder="Ex.: guilherme@email.com"></center>
+            <br>
+            <center><div class="label_user">Senha:</div></center>
+            <center><input id="senhaInput" type="password" placeholder="*****"></center>
+            <br>
+            <center>
+                <div class="container_btn-login">
+                    <a class="one" href="Index.html">Cancelar</a>
+                    <button class="btn_laranja" onclick="criarConta()">Criar conta</button>
+                </div>
+            </center>
+            <br><br>
+        </div>
+        <div class="whatsapp-icon" onclick="openWhatsApp()">
+            <img src="icone-whatsapp.png" alt="Ícone do WhatsApp">
+        </div>
+    </div>
+
+    <script>
+        function criarConta() {
+            var nome = document.getElementById("nomeInput").value;
+            var telefone = document.getElementById("telefoneInput").value;
+            var email = document.getElementById("emailInput").value;
+            var senha = document.getElementById("senhaInput").value;
+
+            // Verificar se o telefone tem 11 dígitos numéricos
+            var telefoneValido = /^\d{11}$/.test(telefone);
+
+            // Verificar o formato do email usando uma expressão regular
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            // Verificar se a senha tem pelo menos 6 caracteres
+            var senhaValida = senha.length >= 6;
+
+            if (nome && telefoneValido && emailRegex.test(email) && senhaValida) {
+                // Todos os campos estão preenchidos corretamente, exibir mensagem e redirecionar
+                alert("Conta criada com sucesso!");
+                window.location.href = "funcoes.html";
+            } else {
+                // Exibir mensagens de alerta apropriadas
+                alert("Por favor, preencha todos os campos corretamente.");
+            }
+        }
+
+        function openWhatsApp() {
+            window.open('https://api.whatsapp.com/send?phone=5581999477226', '_blank');
+        }
+    </script>
+</body>
+</html>

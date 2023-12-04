@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento</title>
+    <link rel="stylesheet" type="text/css" href="pagamento.css">
+    <style></style>
+</head>
+
+<body>
+    <div>
+        <div class="logo"></div>
+        <div class="conteiner">
+            <h2>Pagamento</h2>
+            <div>
+                <button onclick="openPixModal()">Pix</button>
+                <br>
+                <button onclick="openDebitModal()">Débito</button>
+                <br>
+                <button onclick="openCreditModal()">Crédito</button>
+                <br>
+                <button onclick="voltarParaFuncoes()">Voltar</button>
+            </div>
+            <div class="whatsapp-icon" onclick="openWhatsApp()">
+                <img src="icone-whatsapp.png" alt="Ícone do WhatsApp">
+            </div>
+        </div>
+    </div>
+    <div id="pixModal" class="overlay">
+        <div class="modal">
+            <span class="close-btn" onclick="closePixModal()">X</span>
+            <h3>Chave Pix</h3>
+            <p>CELULAR - 81 9 99477226</p>
+            <p>Dinah Gonçalves Barreto - BMG</p>
+            <div>
+                <button onclick="selecionarPeriodo(100)">Mensal</button>
+                <button onclick="selecionarPeriodo(250)">Trimestral</button>
+                <button onclick="selecionarPeriodo(500)">Semestral</button>
+                <button onclick="selecionarPeriodo(1000)">Anual</button>
+            </div>
+            <label id="valorTotalLabelPix">Valor Total: R$0,00</label>
+            <input type="file" accept="image/png" id="fileInput">
+            <button onclick="attachFile()">Anexar PNG</button>
+            <button onclick="closePixModal()">OK</button>
+        </div>
+    </div>
+
+    <div id="debitModal" class="overlay">
+        <div class="modal">
+            <span class="close-btn" onclick="closeDebitModal()">X</span>
+            <h3>Dados do Cartão de Débito</h3>
+            <label for="numeroCartaoDebito">Número do Cartão:</label>
+            <input type="text" id="numeroCartaoDebito" placeholder="XXXX XXXX XXXX XXXX" required>
+            <label for="nomeTitularDebito">Nome do Titular:</label>
+            <input type="text" id="nomeTitularDebito" placeholder="Nome Completo" required>
+            <label for="dataValidadeDebito">Data de Validade:</label>
+            <input type="text" id="dataValidadeDebito" placeholder="MM/AA" required>
+            <label for="codigoSegurancaDebito">Código de Segurança:</label>
+            <input type="text" id="codigoSegurancaDebito" placeholder="CVV" required>
+            <div>
+                <button onclick="selecionarPeriodo(100)">Mensal</button>
+                <button onclick="selecionarPeriodo(250)">Trimestral</button>
+                <button onclick="selecionarPeriodo(500)">Semestral</button>
+                <button onclick="selecionarPeriodo(1000)">Anual</button>
+            </div>
+            <label id="valorTotalLabelDebito">Valor Total: R$0,00</label>
+            <button onclick="processarDebito()">Processar Débito</button>
+            <button onclick="closeDebitModal()">Cancelar</button>
+        </div>
+    </div>
+
+    <div id="creditModal" class="overlay">
+        <div class="modal">
+            <span class="close-btn" onclick="closeCreditModal()">X</span>
+            <h3>Dados do Cartão de Crédito</h3>
+            <label for="numeroCartaoCredito">Número do Cartão:</label>
+            <input type="text" id="numeroCartaoCredito" placeholder="XXXX XXXX XXXX XXXX" required>
+            <label for="nomeTitularCredito">Nome do Titular:</label>
+            <input type="text" id="nomeTitularCredito" placeholder="Nome Completo" required>
+            <label for="dataValidadeCredito">Data de Validade:</label>
+            <input type="text" id="dataValidadeCredito" placeholder="MM/AA" required>
+            <label for="codigoSegurancaCredito">Código de Segurança:</label>
+            <input type="text" id="codigoSegurancaCredito" placeholder="CVV" required>
+            <div>
+                <button onclick="selecionarPeriodo(100)">Mensal</button>
+                <button onclick="selecionarPeriodo(250)">Trimestral</button>
+                <button onclick="selecionarPeriodo(500)">Semestral</button>
+                <button onclick="selecionarPeriodo(1000)">Anual</button>
+            </div>
+            <label id="valorTotalLabelCredito">Valor Total: R$0,00</label>
+            <button onclick="processarCredito()">Processar Crédito</button>
+            <button onclick="closeCreditModal()">Cancelar</button>
+        </div>
+    </div>
+
+    <script>
+        let valorSelecionado = 0;
+
+        function openPixModal() {
+            document.getElementById("pixModal").style.display = "flex";
+        }
+
+        function closePixModal() {
+            document.getElementById("pixModal").style.display = "none";
+            valorSelecionado = 0; // Resetar o valor ao fechar a modal
+            atualizarLabelValor();
+        }
+
+        function openDebitModal() {
+            document.getElementById("debitModal").style.display = "flex";
+        }
+
+        function closeDebitModal() {
+            document.getElementById("debitModal").style.display = "none";
+            valorSelecionado = 0; // Resetar o valor ao fechar a modal
+            atualizarLabelValor();
+        }
+
+        function openCreditModal() {
+            document.getElementById("creditModal").style.display = "flex";
+        }
+
+        function closeCreditModal() {
+            document.getElementById("creditModal").style.display = "none";
+            valorSelecionado = 0; // Resetar o valor ao fechar a modal
+            atualizarLabelValor();
+        }
+
+        function selecionarPeriodo(valor) {
+            valorSelecionado = valor;
+            atualizarLabelValor();
+        }
+
+        function atualizarLabelValor() {
+            // Atualizar o label de valor total nas modais
+            document.getElementById("valorTotalLabelPix").textContent = `Valor Total: R$${valorSelecionado.toFixed(2)}`;
+            document.getElementById("valorTotalLabelDebito").textContent = `Valor Total: R$${valorSelecionado.toFixed(2)}`;
+            document.getElementById("valorTotalLabelCredito").textContent = `Valor Total: R$${valorSelecionado.toFixed(2)}`;
+        }
+
+        function attachFile() {
+            // Lógica para anexar arquivo PNG
+            var fileInput = document.getElementById("fileInput");
+            var selectedFile = fileInput.files[0];
+            if (selectedFile) {
+                alert("Arquivo PNG anexado: " + selectedFile.name);
+                // Aqui você pode adicionar lógica adicional conforme necessário
+            } else {
+                alert("Selecione um arquivo PNG.");
+            }
+        }
+
+        function processarDebito() {
+            var numeroCartao = document.getElementById("numeroCartaoDebito").value;
+            var nomeTitular = document.getElementById("nomeTitularDebito").value;
+            var dataValidade = document.getElementById("dataValidadeDebito").value;
+            var codigoSeguranca = document.getElementById("codigoSegurancaDebito").value;
+
+            if (numeroCartao && nomeTitular && dataValidade && codigoSeguranca && valorSelecionado > 0) {
+                // Todos os campos estão preenchidos, processar o débito
+                alert("Pagamento realizado com sucesso! Valor: R$" + valorSelecionado.toFixed(2));
+                closeDebitModal();
+            } else {
+                // Campos incompletos, exibir mensagem de erro
+                alert("Dados incompletos ou valor não selecionado. Favor validar.");
+            }
+        }
+
+        function processarCredito() {
+            var numeroCartao = document.getElementById("numeroCartaoCredito").value;
+            var nomeTitular = document.getElementById("nomeTitularCredito").value;
+            var dataValidade = document.getElementById("dataValidadeCredito").value;
+            var codigoSeguranca = document.getElementById("codigoSegurancaCredito").value;
+
+            if (numeroCartao && nomeTitular && dataValidade && codigoSeguranca && valorSelecionado > 0) {
+                // Todos os campos estão preenchidos, processar o crédito
+                alert("Pagamento realizado com sucesso! Valor: R$" + valorSelecionado.toFixed(2));
+                closeCreditModal();
+            } else {
+                // Campos incompletos, exibir mensagem de erro
+                alert("Dados incompletos ou valor não selecionado. Favor validar.");
+            }
+        }
+
+        function voltarParaFuncoes() {
+            window.location.href = 'funcoes.html';
+        }
+        function openWhatsApp() {
+            window.open('https://api.whatsapp.com/send?phone=5581999477226', '_blank');
+        }
+    </script>
+</body>
+
+</html>

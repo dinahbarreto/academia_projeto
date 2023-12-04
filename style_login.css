@@ -1,0 +1,177 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+div.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(https://1ebd8d7983667121066ac830f0ce6513.cdn.bubble.io/f1695420528419x539410113365922200/atletico-homem-e-mulher-com-halteres.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: cover;   
+}
+div.container_login{
+    width: 400px;
+    min-width: 320px;
+    max-width: 400px;
+    align-items: center;
+    align-content: center;
+    background-color: #ffffffea;
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: cover;  
+    border-radius: 10px; 
+}
+div.container_register{
+    width: 400px;
+    min-width: 320px;
+    max-width: 400px;
+    height: 560px;
+    align-items: center;
+    align-content: center;
+    background-color: #ffffffea;
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: cover;
+    border-radius: 10px; 
+}
+div.container_recuperarsenha{
+    width: 400px;
+    min-width: 320px;
+    max-width: 400px;
+    align-items: center;
+    align-content: center;
+    background-color: #ffffffea;
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: cover;
+    border-radius: 10px; 
+}
+div.logo_app{
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(https://1ebd8d7983667121066ac830f0ce6513.cdn.bubble.io/f1695816027227x836959243297699300/WhatsApp_Image_2023-09-27_at_08.26.10-removebg-preview.png);
+    background-repeat: no-repeat;
+    background-size: cover;  
+}
+input[type="password"] {
+    width: 90%;
+    height: 40px;
+    background-color:#F6F7F9;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: #09144328;
+    border-width: 1px;
+    outline-style: none;
+    padding: 10px;
+}
+div.label_user{
+    width: 90%;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: start;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 2px;
+}
+div.label_titulo{
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+}
+input[type="email"] {
+    width: 90%;
+    height: 40px;
+    background-color:#F6F7F9;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: #09144328;
+    border-width: 1px;
+    outline-style: none;
+    padding: 10px;
+}
+input:focus-visible{
+    border-color: #FE6C19;
+    border-width: 2px;
+}
+input:hover{
+    background-color:#e9e2e2;
+}
+div.container_btn-login{
+    width: 100%;
+    height: 40px;
+}
+button.btn_laranja{
+    background-color: #FE6C19;
+    height: 40px;
+    width: 190px;
+    border-radius: 5px;
+    border-color: #fe6d1900;
+    color: #ffffff;
+    font-weight: 600;
+    
+}
+button.btn_laranja:hover{
+    background-color: #f5762d;
+}
+button.btn_esqueceu_senha{
+    background-color: #e9e2e200;
+    border-color: #00000000;
+    text-align: end;
+    width: 100%;
+    margin-top: 3px;
+    font-size: 12px;
+}
+div.esqueci_senha{
+    width: 90%;
+    height: 20px;
+    text-align: end;
+}
+a.one:link, a.one:visited{
+    background-color: #4b4851;
+    color: rgb(255, 255, 255);
+    padding: 11px 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+    padding-top: 10px;
+}
+  a.one:hover, a.one:active {
+    background-color: #5c5a61;
+}
+a.two:link, a.two:visited{
+    background-color: #4b485100;
+    color: #4b4851;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+    align-items: end;
+    padding-top: 5px;
+}
+
+.whatsapp-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #25d366;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.whatsapp-icon img {
+    width: 70%;
+    height: auto;
+}

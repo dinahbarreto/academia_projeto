@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style_login.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="container">
+        <div class="container_login">
+            <br>
+            <center> <div class="logo_app"></div></center>
+            <br>
+            <center><div class="label_user">Email:</div></center>
+            <center><input id="emailInput" type="email" placeholder="Ex.: guilherme@gmail.com"></center>
+            <br>
+            <center><div class="label_user">Senha:</div></center>
+            <center><input id="senhaInput" type="password" placeholder="*******"></center>
+            <center><div class="esqueci_senha"><a class="two" href="RecuperarSenha.html">esqueceu sua senha?<b>clique aqui</b></a></div></center>
+            <center>
+                <div class="container_btn-login">
+                    <a class="one" href="Cadastro.html">Cadastrar</a>
+                    <button class="btn_laranja" onclick="entrar()">Entrar</button>
+                </div>
+            </center>
+            <br>
+            <br>
+            <div class="whatsapp-icon" onclick="openWhatsApp()">
+                <img src="https://macmagazine.com.br/wp-content/uploads/2012/01/17-whatsapp.png" alt="Ícone do WhatsApp">
+            </div>   
+        </div>
+    </div>
+    <br>
+
+    <script>
+        function entrar() {
+            var email = document.getElementById("emailInput").value;
+            var senha = document.getElementById("senhaInput").value;
+
+            // Verificar o formato do email usando uma expressão regular
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            // Verificar se a senha tem pelo menos 6 caracteres
+            var senhaValida = senha.length >= 6;
+
+            if (emailRegex.test(email) && senhaValida) {
+                // Ambos os campos estão preenchidos corretamente, redirecione para "funcoes.html"
+                window.location.href = "funcoes.html";
+            } else {
+                // Exibir mensagens de alerta apropriadas
+                if (!emailRegex.test(email)) {
+                    alert("Email incorreto. Certifique-se de inserir corretamente);
+                } else if (!senhaValida) {
+                    alert("Senha incorreta");
+                }
+            }
+        }
+
+        function openWhatsApp() {
+            window.open('https://api.whatsapp.com/send?phone=5581999477226', '_blank');
+        }
+    </script>
+</body>
+</html>
